@@ -1,0 +1,25 @@
+import iut.sae.algo.efficacite08;
+
+public class TestEfficacite {
+    public static void main(String[] args) {
+        String testData = "aaabbbcccaaa";
+        int iterations = 1000;
+
+        // Mesure du temps d'exécution
+        long startTime = System.nanoTime();
+        try {
+            String result = efficacite08.RLE(testData, iterations);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        long endTime = System.nanoTime();
+        long duration = (endTime - startTime) / 1000000; // convertir en millisecondes
+        System.out.println("Temps d'exécution : " + duration + " ms");
+
+        // Mesure de l'utilisation de la mémoire
+        Runtime runtime = Runtime.getRuntime();
+        runtime.gc(); // Garbage collection
+        long memoryUsed = runtime.totalMemory() - runtime.freeMemory();
+        System.out.println("Mémoire utilisée : " + memoryUsed + " bytes");
+    }
+}

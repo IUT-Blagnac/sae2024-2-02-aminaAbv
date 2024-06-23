@@ -1,6 +1,7 @@
 package iut.sae.algo;
 
 import org.junit.Test;
+
 import junit.framework.TestCase;
 
 
